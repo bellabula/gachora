@@ -1,0 +1,149 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    :root {
+        --main-darkblue: #365b6d;
+        --main-darkblue-filter: brightness(0) saturate(100%) invert(31%) sepia(33%) saturate(583%) hue-rotate(155deg) brightness(92%) contrast(89%);
+        --main-yellow: #E5A856;
+        --main-yellow-filter: filter: brightness(0) saturate(100%) invert(74%) sepia(20%) saturate(1170%) hue-rotate(348deg) brightness(94%) contrast(91%);
+        --main-bg-gray: #f2f1ec;
+        --white-filter: brightness(0) saturate(100%) invert(98%) sepia(6%) saturate(195%) hue-rotate(241deg) brightness(115%) contrast(100%);
+    }
+    body {
+        margin: 0;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("../imgs/collapsePlugin.svg");
+    }
+
+    .navbar-toggler {
+        border: none
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none
+    }
+
+    .dropdown-menu {
+        border: none;
+    }
+
+    .offcanvas.offcanvas-end {
+        width: 300px;
+    }
+
+    @media (min-width: 992px){
+        #offcanvasNavbar {
+            display: none;
+        }
+    }
+    @media (max-width: 992px){
+        #bigNavbar-l, #bigNavbar-r {
+            display: none;
+        }
+    }
+    #bigNavbar-l li, #bigNavbar-r li {
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+        line-height: 80px;
+        z-index: 1000;
+    }
+    @media (min-width: 1200px){
+        #bigNavbar-l li {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+</style>
+<nav class="navbar bg-body-tertiary sticky-top navbar-expand-lg overflow-hidden" style="background-color: var(--main-bg-gray); height: 80px">
+    <div class="container-fluid pe-0 ps-0">
+        <div class="ps-4">
+            <a class="navbar-brand" href="#">
+                <img src="../imgs/logo2.png" alt="Bootstrap" width="200px">
+            </a>
+        </div>
+        <div class="w-100 position-absolute" style="background-color: var(--main-darkblue); height: 80px;border-radius: 40px 0 0 40px; margin-left: 280px;"></div>
+        <div id="bigNavbar-l" class="position-absolute" style="margin-left: 300px; color: white">
+            <ul class="navbar-nav me-auto my-lg-0 navbar-nav-scroll ms-4"
+                style="--bs-scroll-height: 80px;">
+                <li class="nav-item fs-4 me-3"><a class="dropdown-item" href="#">扭蛋</a></li>
+                <li class="nav-item fs-4 me-3"><a class="dropdown-item" href="#">一番賞</a></li>
+                <li class="nav-item fs-4 me-3"><a class="dropdown-item" href="#">常見問題</a></li>
+                <li class="nav-item fs-4 me-3"><a class="dropdown-item" href="#">聯絡我們</a></li>
+            </ul>
+        </div>
+        <div id="bigNavbar-r">
+            <ul class="navbar-nav me-auto my-lg-0 pe-4 navbar-nav-scroll"
+                style="--bs-scroll-height: 80px;">
+                <li class="nav-item"><a class="dropdown-item" href="#"><img src="../imgs/member.svg" style="filter: var(--white-filter)"></a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#"><img src="../imgs/notify.svg" style="filter: var(--white-filter)"></a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#"><img src="../imgs/wallet.svg" style="filter: var(--white-filter)"></a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#"><img src="../imgs/cart.svg" style="filter: var(--white-filter)"></a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#"><img src="../imgs/lang.svg" style="filter: var(--white-filter)"></a></li>
+            </ul>
+        </div>
+        <button class="navbar-toggler me-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="filter: var(--white-filter)"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Gachora</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">會員登入</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            扭蛋
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">扭蛋首頁</a></li>
+                            <li><a class="dropdown-item" href="#">扭蛋分類頁</a></li>
+                            <li><a class="dropdown-item" href="#">扭蛋商品頁</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            一番賞
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">一番賞首頁</a></li>
+                            <li><a class="dropdown-item" href="#">一番賞分類頁</a></li>
+                            <li><a class="dropdown-item" href="#">一番賞商品頁</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">購物車</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">我的錢包</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">常見問題</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">聯絡我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
