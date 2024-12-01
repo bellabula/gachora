@@ -1,0 +1,208 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/babel.js"></script>
+    <style>
+        :root {
+            --main-darkblue: #365b6d;
+            --main-darkblue-filter: brightness(0) saturate(100%) invert(31%) sepia(33%) saturate(583%) hue-rotate(155deg) brightness(92%) contrast(89%);
+            --main-yellow: #E5A856;
+            --main-yellow-filter: filter: brightness(0) saturate(100%) invert(74%) sepia(20%) saturate(1170%) hue-rotate(348deg) brightness(94%) contrast(91%);
+            --main-bg-gray: #f2f1ec;
+            --white-filter: brightness(0) saturate(100%) invert(98%) sepia(6%) saturate(195%) hue-rotate(241deg) brightness(115%) contrast(100%);
+        }
+
+        #no_nav {
+            position: absolute;
+            top: 100px;
+
+            display: grid;
+            grid-template-areas:
+                "left1 right"
+                "left2 right"
+                "footer footer";
+            grid-template-columns: 68vw 32vw;
+        }
+
+        .refimg {
+            width: 100vw;
+            opacity: 0.5;
+            position: absolute;
+            top: -70px;
+        }
+
+        .lefter1 {
+            grid-area: left1;
+            color: var(--main-darkblue);
+            font-size: 1.4vw;
+            /* border: 5px red solid; */
+        }
+
+        .lefter2 {
+            grid-area: left2;
+            color: var(--main-darkblue);
+            font-size: 1.4vw;
+            margin-top: 15px;
+
+        }
+
+        .righter {
+            grid-area: right;
+            /* border: 5px red solid; */
+        }
+
+        .breadcrumb {
+            margin-left: 3vw;
+        }
+
+        .btn1 {
+            margin-left: 0.5vw;
+            margin-right: 0.5vw;
+        }
+
+        .btn1.active {
+            background-color: var(--main-yellow);
+            border-radius: 35px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .inStock {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: 20% 60% 20%;
+            height: 23vw;
+            flex-wrap: wrap;
+            border: 3px solid var(--main-darkblue);
+            border-left: 0px;
+            margin-right: 10px;
+            justify-content: center;
+            border-radius: 0px 12px 12px 0px;
+
+            & h1 {
+                font-size: 2.8vw;
+                padding-top: 7px;
+            }
+
+            & .cardContainer {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-y: hidden;
+
+            }
+        }
+
+        .seriesCard {
+            display: grid;
+            justify-items: center;
+            margin-left: 1vw;
+            margin-right: 1vw;
+
+            & img {
+                width: 8vw;
+                height: 10vw;
+                object-fit: cover;
+
+            }
+
+            & button {
+                font-size: 0.9vw;
+                margin-left: 1vw;
+                margin-right: 1vw;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 0;
+                padding-bottom: 0px;
+                border-radius: 30px;
+                color: white;
+                border: none;
+                background-color: var(--main-darkblue);
+
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- reference img -->
+    <img class="refimg" src="./ref/1-1.png" alt="">
+    <!-- Navbar -->
+    <div id="nav"></div>
+
+    <div id="no_nav">
+        <div class="lefter1">
+            <!-- // 追蹤條 -->
+            <ol class="breadcrumb">
+                <li class="btn1">戰利品儲存庫</li>
+                <span>&nbsp;&gt;&nbsp;</span>
+                <li class="btn1 active">戰利品購物車</li>
+                <span>&nbsp;&gt;&nbsp;</span>
+                <li class="btn1">寄送與結帳</li>
+                <span>&nbsp;&gt;&nbsp;</span>
+                <li class="btn1">確認訂單</li>
+                <span>&nbsp;&gt;&nbsp;</span>
+                <li class="btn1">訂單完成</li>
+            </ol>
+
+            <div class="inStock">
+                <h1>戰利品儲存庫</h1>
+                <div class="cardContainer">
+                    <div class="seriesCard">
+                        <img src="./img/pig.png" alt="" />
+                        <button>加入出貨</button>
+                    </div>
+                    <div class="seriesCard">
+                        <img src="./img/pig.png" alt="" />
+                        <button>加入出貨</button>
+                    </div>
+                    <div class="seriesCard">
+                        <img src="./img/pig.png" alt="" />
+                        <button>加入出貨</button>
+                    </div>
+                    <div class="seriesCard">
+                        <img src="./img/pig.png" alt="" />
+                        <button>加入出貨</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lefter2">
+                <div class="inStock">
+                    <h1>待出貨區</h1>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="righter">
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Navbar component -->
+    <script type="text/babel" src="./components/Navbar.jsx"></script>
+    <script type="text/babel">
+        let myReactRoot1 = ReactDOM.createRoot(document.getElementById('nav'));
+
+
+
+        // 扭蛋navbar
+        myReactRoot1.render(<React.Fragment>
+            <Navbar logo='./img/logo2.png' bgcolor="var(--main-bg-gray)" navbgcolor="var(--main-darkblue)" svgColor="var(--white-filter)" textColor="white" />
+        </React.Fragment>)
+        // 一番賞navbar
+        // <Navbar logo='./img/logo.png' bgcolor="var(--main-darkblue)" navbgcolor="var(--main-bg-gray)" svgColor="var(--main-darkblue-filter)" textColor="var(--main-darkblue)" />
+    </script>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+</body>
