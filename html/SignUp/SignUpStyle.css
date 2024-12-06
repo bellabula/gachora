@@ -1,0 +1,148 @@
+body{
+    background-color: #F2F1EC;
+    overflow-x: hidden;
+}
+
+
+h1 {
+    margin-top: 10%;
+    margin-left: 15%;
+    color:#365B6D;
+    font-weight:bold;
+}
+
+.form-floating {
+    width: 450px;
+    margin-left: 20%;
+}
+
+.form-control {
+    margin-top: 50px;
+    border-radius: 35px;
+    box-shadow:3px 3px #365B6D;
+}
+
+.check{
+    margin: 5% 0% 0% 25%;
+}
+
+button {
+    margin-left: 32%;
+    margin-top: 15px;
+    border-radius: 35px;
+    background-color: #FEC265;
+    width: 125px;
+    height: 50px;
+    font-size: 20px;
+    font-weight:bold;
+    color: #365B6D;
+}
+
+a{
+    color:#365B6D;
+}
+
+a:hover{
+    color:#FEC265
+}
+
+.back{
+    visibility: hidden;
+}
+
+.xa,.xb,.xc,.xd,.xe{
+    margin-left: 25%;
+}
+
+/* 大長方形 */
+.xa{
+box-sizing: border-box;
+position: absolute;
+width: 809px;
+height: 661px;
+left: 848px;
+top: 255px;
+
+background: #365B6D;
+border: 5px dashed #FEC265;
+border-radius: 100px;
+}
+
+/* 小長方形 */
+.xb{
+position: absolute;
+width: 267px;
+height: 444px;
+left: 1257px;
+top: 363px;
+
+background: #FEC265;
+border-radius: 50px;
+
+}
+
+/* 三角形 */
+.xc{
+width: 0;
+height: 0;
+border-top: 70px solid #FEC265;
+border-right: 70px solid transparent;
+position: absolute;
+left: 890px;
+top: 540px;
+
+transform: rotate(135deg);
+border-radius: 5px;
+}
+
+/* 我已經有會員了? */
+.xd{
+
+position: absolute;
+width: 185px;
+height: 26px;
+left: 998px;
+top: 535px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+}
+
+/* 回登入頁面 */
+.xe{
+
+background: #F2F1EC;
+border-radius: 25px;
+
+position: absolute;
+width: 200px;
+height: 50px;
+left: 980px;
+top: 599px;
+
+font-weight:bold;
+font-size: 20px;
+line-height: 50px;
+
+text-align: center;
+color: #365B6D;
+}
+
+@media(max-width: 1500px) {
+    .xx{display: none;
+    }
+    .back{
+        visibility: visible;
+    }
+}
+
+@media(max-width: 890px) {
+    .form-floating{
+        width:50vw;
+    }
+}

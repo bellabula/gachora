@@ -1,0 +1,115 @@
+    body {
+    background-color: #F2F1EC;
+}
+
+h1 {
+    margin-top: 10%;
+    margin-left: 15%;
+    color:#365B6D;
+    font-weight:bold;
+}
+
+.form-floating {
+    width: 50%;
+    margin-left: 20%;
+}
+
+.form-control {
+    margin-top: 50px;
+    border-radius: 35px;
+    box-shadow:3px 3px #365B6D;
+}
+
+.contact-item {
+    display: flex;
+}
+
+.contact-text span:nth-of-type(1){
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.contact-item image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-item, .contact{
+    color:#365B6D
+}
+
+button {
+    margin-left: 36%;
+    margin-top: 25px;
+    border-radius: 35px;
+    background-color: #FEC265;
+    width: 125px;
+    height: 50px;
+    font-size: 20px;
+    font-weight:bold;
+    color: #365B6D;
+}
+
+.aa {
+    margin: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.aa span:nth-of-type(2) {
+    margin-left: 25%;
+    color: #365B6D;
+}
+
+.aa span:nth-of-type(4) {
+    color: #FEC265;
+    text-decoration: underline;
+}
+
+.aa span:nth-child(4):hover {
+    color: #365B6D;
+    text-decoration: underline;
+}
+
+.bb {
+    width: 750px;
+    height: 375px;
+
+    left: 45%;
+    bottom:0%;
+
+    background-color: #365B6D;
+    border-radius:375px 375px 0 0;/*左上、右上、右下、左下*/
+    /* background-color: #365B6D;
+    border-radius:667px 667px 0 0;左上、右上、右下、左下 */
+
+    position: absolute;
+}
+.cc {
+    width: 600px;
+    height: 300px;
+
+    left: 49%;
+    bottom:0%;
+    background-color: #FEC265;
+    border-radius:300px 300px 0 0;/*左上、右上、右下、左下*/
+    /* background-color: #365B6D;
+    border-radius:667px 667px 0 0;左上、右上、右下、左下 */
+
+    position: absolute;
+}
+
+@media (max-width: 1300px) {
+    .bb, .cc{
+        display: none;
+    }
+}
+
+@media (max-height: 850px) {
+    .bb, .cc{
+        display: none;
+    }
+}
+
+

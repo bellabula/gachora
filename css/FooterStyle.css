@@ -1,0 +1,96 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #F2F1EC;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #365B6D;
+    color: #f2f2f2;
+    padding: 2vw 0;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.detail {
+    display: flex;
+}
+
+.gachora {
+    flex: 1;
+}
+
+
+h3 {
+    margin-top: 2vw;
+}
+
+h5 {
+    margin: 2vw 0vw 0vw 0vw;
+}
+
+.xa {
+    padding: 1vw 1vw 1vw 1vw;
+    height: 11vw;
+    width: 17vw;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.xb {
+    margin: 0.5vw 0.5vw 0.5vw 0.5vw;
+    height: 11vw;
+    width: 17vw;
+    background-color: black;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.email,
+.tel {
+    margin-top: 1vw;
+    margin-left: -1vw;
+    font-size: 24px;
+}
+
+.img1,
+.img2 {
+    margin-top: 1vw;
+}
+
+.xc {
+    margin: 0vw 0vw 0vw 5vw;
+    padding: 1vw 1vw 1vw 1vw;
+    height: 11vw;
+    width: 15vw;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.xd {
+    margin: 0.5vw 0.5vw 0.5vw 0.5vw;
+    height: 11vw;
+    width: 17vw;
+    background-color: black;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1300px) {
+    .gachora > h3, .gachora > h5, .gachora > p, .xb >.email,.xd > .tel{
+        font-size: 2vw;
+    }
+    .gachora > img{
+        width:15vw
+    }
+    .xb > img, .xd > img{
+        width:25px;
+        height:25px
+    }
+    .col-6{
+        flex-direction: column; /* 改為垂直排列 */
+    }
+    .col-6 > .info{
+        margin-left: 15vw;
+    }
+}
