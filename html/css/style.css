@@ -1,0 +1,16 @@
+/* 全域設定 */
+:root {
+    --main-darkblue: #365B60;
+    --main-darkblue-filter: brightness(0) saturate(100%) invert(30%) sepia(24%) saturate(701%) hue-rotate(139deg) brightness(93%) contrast(85%);
+    --main-yellow: #FEC265;
+    --main-yellow-filter: brightness(0) saturate(100%) invert(84%) sepia(70%) saturate(1307%) hue-rotate(311deg) brightness(103%) contrast(99%);
+    --main-bg-gray: #F2F1EC;
+    --white-filter: brightness(0) saturate(100%) invert(98%) sepia(6%) saturate(195%) hue-rotate(241deg) brightness(115%) contrast(100%);
+}
+main {
+    margin-top: 80px;
+}
+body {
+    margin: 0;
+    background-color: var(--main-bg-gray);
+}

@@ -1,0 +1,38 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/babel.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+    <!-- Navbar -->
+    <nav id="nav"></nav>
+
+    <!-- Your Code -->
+    <main class="container container-xxl">
+        
+    </main>
+    
+    <!-- Navbar component -->
+    <script type="text/babel" src="./components/Navbar.jsx"></script>
+    <script type="text/babel">
+        let myReactRoot = ReactDOM.createRoot(document.getElementById('nav'));
+        // 這邊其中一個要用的就好
+        // 扭蛋navbar
+        myReactRoot.render(
+            <Navbar logo='./img/logo2.png' bgcolor="var(--main-bg-gray)" navbgcolor="var(--main-darkblue)" svgColor="var(--white-filter)" textColor="white" />
+        )
+        // 一番賞navbar
+        // <Navbar logo='./img/logo.png' bgcolor="var(--main-darkblue)" navbgcolor="var(--main-bg-gray)" svgColor="var(--main-darkblue-filter)" textColor="var(--main-darkblue)" />
+    </script>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+</body>

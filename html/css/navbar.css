@@ -1,0 +1,43 @@
+.navbar-toggler-icon {
+    background-image: url("../img/collapsePlugin.svg");
+}
+
+.navbar-toggler {
+    border: none
+}
+
+.navbar-toggler:focus {
+    box-shadow: none
+}
+
+.dropdown-menu {
+    border: none;
+}
+
+.offcanvas.offcanvas-end {
+    width: 300px;
+}
+
+@media (min-width: 992px){
+    #offcanvasNavbar {
+        display: none;
+    }
+}
+@media (max-width: 992px){
+    #bigNavbar-l, #bigNavbar-r {
+        display: none;
+    }
+}
+#bigNavbar-l li, #bigNavbar-r li {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 80px;
+    z-index: 1000;
+}
+@media (min-width: 1200px){
+    #bigNavbar-l li {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

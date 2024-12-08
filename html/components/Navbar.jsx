@@ -1,7 +1,7 @@
 function Navbar({logo, bgcolor, navbgcolor, textColor, svgColor}) {
     return (
-        <nav className="navbar bg-body-tertiary fixed-top navbar-expand-lg overflow-hidden" style={{backgroundColor: bgcolor, height: "80px"}}>
-            <div className="container-fluid pe-0 ps-0">
+        <nav className="navbar fixed-top navbar-expand-lg overflow-hidden" style={{backgroundColor: bgcolor, height: "80px"}}>
+            <div className="container-fluid pe-0 ps-0 container-xxl">
                 <div className="ps-4">
                     <a className="navbar-brand" href="#">
                         <img src={logo} alt="Bootstrap" width="200px"/>
@@ -11,6 +11,7 @@ function Navbar({logo, bgcolor, navbgcolor, textColor, svgColor}) {
                 <div id="bigNavbar-l" className="position-absolute" style={{marginLeft: "300px", color: textColor}}>
                     <ul className="navbar-nav me-auto my-lg-0 navbar-nav-scroll ms-4"
                         style={{bsScrollHeight: "80px"}}>
+                        <li className="nav-item fs-4 me-3"><a className="dropdown-item" href="#">品牌故事</a></li>
                         <li className="nav-item fs-4 me-3"><a className="dropdown-item" href="#">扭蛋</a></li>
                         <li className="nav-item fs-4 me-3"><a className="dropdown-item" href="#">一番賞</a></li>
                         <li className="nav-item fs-4 me-3"><a className="dropdown-item" href="#">常見問題</a></li>

@@ -1,0 +1,950 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/babel.js"></script>
+</head>
+<style>
+    button.rounded-5 {
+        width: 100px;
+        height: 35px;
+        color: white;
+        background-color: var(--main-yellow);
+        border: none;
+    }
+
+    .custom-section {
+        background-color: var(--main-darkblue);
+        border-radius: 35px;
+        padding: 10px;
+    }
+
+    main .nav-link {
+        color: white;
+    }
+
+    main .nav-pills .nav-link.active {
+        color: var(--main-darkblue);
+        background-color: var(--main-yellow);
+        border-color: var(--bs-nav-tabs-link-active-border-color);
+    }
+
+    li.nav-item {
+        margin: 0 10px;
+    }
+
+    main .nav-link:hover,
+    main .nav-link:focus {
+        color: var(--main-yellow)
+    }
+
+    .profile-container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .btn-icon {
+        color: white;
+        background-color: var(--main-darkblue);
+        border: 5px solid var(--main-darkblue);
+        border-radius: 35px;
+    }
+
+    .btn-icon:hover {
+        color: var(--main-yellow);
+    }
+
+    #memberWall .btn:active{
+        border-color: var(--main-darkblue);
+    }
+
+    #memberProfile input {
+        border: 1px solid var(--main-darkblue);
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    }
+
+    #profileEdit .editFocus:focus {
+        border: 3px solid rgba(54, 91, 96, 0.5);
+    }
+
+    .edit-button button {
+        color: white;
+        background-color: var(--main-darkblue);
+    }
+
+    .edit-button button:hover {
+        color: var(--main-yellow);
+        background-color: var(--main-darkblue);
+    }
+
+    .small-info {
+        font-size: 12px;
+        color: #6C757D;
+        margin-left: 5px;
+    }
+
+    /* -------------------------------------------------- */
+    .datepicker-toggle {
+        display: inline-block;
+        position: relative;
+        width: 25px;
+        height: 25px;
+    }
+
+    .datepicker-toggle-button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('./img/calendar.svg');
+    }
+
+    .datepicker-input {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    .datepicker-input::-webkit-calendar-picker-indicator {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: auto;
+        cursor: pointer;
+    }
+
+    .date-input {
+        width: 150px;
+        color: #6C757D;
+        border: 1px solid gainsboro;
+        background: gainsboro;
+    }
+
+    /* -------------------------------------------------- */
+
+    td {
+        padding: 15px 1px;
+    }
+
+    li.nav-item {
+        margin: 0;
+    }
+
+    #memberFavor .nav-link {
+        color: black;
+    }
+
+    #memberFavor .nav-link.active {
+        border: 2px solid var(--main-darkblue);
+    }
+
+    .favor-section {
+        background-color: gainsboro;
+        border-radius: 5px;
+    }
+
+    #memberWall .circle-container {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
+
+    #memberWall img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+    }
+
+    #memberWall .btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .inventory-container {
+        background-color: var(--main-darkblue);
+        border-radius: 10px;
+        padding: 20px;
+        color: white;
+    }
+
+    .inventory-container table {
+        color: white
+    }
+
+    .inventory-container table img {
+        width: 60px;
+        height: 60px;
+        background-color: #ddd;
+        border-radius: 5px;
+    }
+
+    .btn-circle {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-exchange {
+        background-color: #ffc107;
+        color: black;
+        border: none;
+    }
+
+    .btn-exchange:hover {
+        background-color: #e0a800;
+    }
+
+    .btn-deli,
+    .btn-deli:hover {
+        color: white;
+        border-color: white;
+    }
+
+    .btn-deli:hover {
+        background-color: gainsboro;
+        color: var(--main-darkblue);
+    }
+
+    tr {
+        border-bottom: 1px solid white;
+    }
+
+    th button {
+        width: 20px;
+        height: 20px;
+        border: none;
+        border-radius: 50%;
+        font-size: 0.75rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffc107;
+        color: var(--main-darkblue)
+    }
+
+    th button:hover {
+        background-color: var(--main-yellow);
+        color: white;
+    }
+
+    #memberWallet tr,
+    #memberOrder tr {
+        border-bottom: 1px solid var(--main-darkblue);
+    }
+</style>
+
+<body>
+    <!-- Navbar -->
+    <nav id="nav"></nav>
+
+    <!-- Your Code -->
+    <main class="container container-xxl">
+        <div class="row pt-5 pb-5 align-items-center">
+            <div class="col-8"><img src="./img/diamond.svg" alt="" width="50px" class="me-4"><span class="h5">XXX會員
+                    您好!</span></div>
+            <div class="col-4">
+                <p class="h2 d-inline-block">G幣餘額</p><button class="rounded-5 float-end">儲值G幣</button>
+                <div class="h2 text-end mb-0">XXXXXXXXX</div>
+                <div class="text-end w-100" style="color:gray">xxx G幣將在2025/12/31到期</div>
+            </div>
+        </div>
+        <!-- Tabs -->
+        <div class="custom-section">
+            <ul class="nav nav-pills justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#memberWall" data-bs-toggle="pill">戰利牆</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#memberFavor" data-bs-toggle="pill">收藏清單</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#memberStore" data-bs-toggle="pill">戰利儲藏庫</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#memberWallet" data-bs-toggle="pill">我的錢包</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#memberOrder" data-bs-toggle="pill">我的訂單</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#memberProfile" data-bs-toggle="pill">基本資料</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content pt-5">
+            <!-- 1. 戰利牆 -->
+            <div id="memberWall" class="tab-pane active">
+                <div class="container">
+                    <!-- 動畫 -->
+                    <div>
+                        <h2 class="text-center fw-bolder my-5">勳章</h2>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn"><img src="./img/arrowLeft.svg"></button>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <img src="./img/dodolong.png" class="circle-container">
+                                <img src="./img/dodolong.png" class="circle-container">
+                                <img src="./img/dodolong.png" class="circle-container">
+                                <img src="./img/dodolong.png" class="circle-container">
+                                <img src="./img/dodolong.png" class="circle-container">
+                                <img src="./img/dodolong.png" class="circle-container">
+                            </div>
+                            <button class="btn"><img src="./img/arrowRight.svg"></button>
+                        </div>
+                    </div>
+
+                    <!-- 抽獎獲利檔 -->
+                    <div class="mt-4">
+                        <h2 class="text-center fw-bolder my-5">扭蛋戰利品</h2>
+                        <div class="d-flex justify-content-between" style="background-color: var(--main-darkblue);">
+                            <button class="btn"><img src="./img/arrowLeft.svg"></button>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <div>
+                                    <img src="./img/gachoTop.svg" class="d-block" style="height:80px;position: relative;bottom: -20px;">
+                                    <img src="./img/dodolong.png">
+                                    <img src="./img/gachoBotton.svg" class="d-block" style="height:100px; object-fit: contain;" >
+                                </div>
+                                <div>
+                                    <img src="./img/gachoTop.svg" class="d-block" style="height:80px;position: relative;bottom: -20px;">
+                                    <img src="./img/dodolong.png">
+                                    <img src="./img/gachoBotton.svg" class="d-block" style="height:100px; object-fit: contain;" >
+                                </div>
+                                <div>
+                                    <img src="./img/gachoTop.svg" class="d-block" style="height:80px;position: relative;bottom: -20px;">
+                                    <img src="./img/dodolong.png">
+                                    <img src="./img/gachoBotton.svg" class="d-block" style="height:100px; object-fit: contain;" >
+                                </div>
+                                <div>
+                                    <img src="./img/gachoTop.svg" class="d-block" style="height:80px;position: relative;bottom: -20px;">
+                                    <img src="./img/dodolong.png">
+                                    <img src="./img/gachoBotton.svg" class="d-block" style="height:100px; object-fit: contain;" >
+                                </div>
+                            </div>
+                            <button class="btn"><img src="./img/arrowRight.svg"></button>
+                        </div>
+                    </div>
+
+                    <!-- 一番賞獲利檔 -->
+                    <div class="mt-4">
+                        <h2 class="text-center fw-bolder my-5">一番賞戰利品</h2>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn"><img src="./img/arrowLeft.svg"></button>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <img src="./img/ichiban1.png">
+                                <img src="./img/ichiban1.png">
+                                <img src="./img/ichiban1.png">
+                                <img src="./img/ichiban1.png">
+                                <img src="./img/ichiban1.png">
+                                <img src="./img/ichiban1.png">
+                            </div>
+                            <button class="btn"><img src="./img/arrowRight.svg"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 2. 收藏清單 -->
+            <div id="memberFavor" class="tab-pane">
+                <div class="favor-section">
+                    <ul class="nav nav-pills justify-content-center nav-justified">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#gachofavor" data-bs-toggle="pill">扭蛋收藏</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ichibanfavor" data-bs-toggle="pill">一番賞收藏</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content pt-5">
+                    <div id="gachofavor" class="tab-pane active">
+                        <div class="row  row-gap-2">
+                            <div class="col-3"><a href=""><img class="w-100" src="./img/gachoMachineA.png" alt=""></a>
+                            </div>
+                            <div class="col-3"><a href=""><img class="w-100" src="./img/gachoMachineA.png" alt=""></a>
+                            </div>
+                            <div class="col-3"><a href=""><img class="w-100" src="./img/gachoMachineA.png" alt=""></a>
+                            </div>
+                            <div class="col-3"><a href=""><img class="w-100" src="./img/gachoMachineA.png" alt=""></a>
+                            </div>
+                            <div class="col-3"><a href=""><img class="w-100" src="./img/gachoMachineA.png" alt=""></a>
+                            </div>
+                            <div class="col-3"><a href=""><img class="w-100" src="./img/gachoMachineA.png" alt=""></a>
+                            </div>
+                            <div class="col-3"><a href=""><img class="w-100" src="./img/gachoMachineA.png" alt=""></a>
+                            </div>
+                            <div class="col-3"><a href=""><img class="w-100" src="./img/gachoMachineA.png" alt=""></a>
+                            </div>
+                            <div class="col-3"><a href=""><img class="w-100" src="./img/gachoMachineA.png" alt=""></a>
+                            </div>
+                            <div class="col-3"><a href=""><img class="w-100" src="./img/gachoMachineA.png" alt=""></a>
+                            </div>
+                            <div class="col-3"><a href=""><img class="w-100" src="./img/gachoMachineA.png" alt=""></a>
+                            </div>
+                            <div class="col-3"><a href=""><img class="w-100" src="./img/gachoMachineA.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ichibanfavor" class="tab-pane">
+                        <h1>一番賞收藏</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- 3. 戰利儲藏庫 -->
+            <div id="memberStore" class="tab-pane">
+                <h1>戰利儲藏庫</h1>
+                <div class="container my-5">
+                    <div class="inventory-container">
+                        <table class="w-100 text-center">
+                            <tr class="border-0">
+                                <th class="text-start">商品圖片</th>
+                                <th class="text-start">商品名稱</th>
+                                <th>賞別</th>
+                                <th>系列</th>
+                                <th>擁有數量</th>
+                                <th>抽扭日期</th>
+                                <th>選取數量</th>
+                                <th>兌換G幣</th>
+                                <th class="position-relative">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        幫我出貨
+                                        <button class="position-absolute classFilterBtn"
+                                            style="border-radius: 5px; right: -15px;">+</button>
+                                        <div class="position-absolute classFilter"
+                                            style="visibility: hidden; padding: 5px;text-align: left;border: 1px solid var(--main-darkblue); border-radius: 5px; background-color: var(--main-bg-gray); color: black; right:-130px; bottom: -150px;">
+                                            <form action="">
+                                                <input type="checkbox" checked> 商品圖片 <br>
+                                                <input type="checkbox" checked> 商品名稱 <br>
+                                                <input type="checkbox" checked> 賞別 <br>
+                                                <input type="checkbox" checked> 系列 <br>
+                                                <input type="checkbox" checked> 抽/扭日期 <br>
+                                                <input type="checkbox" checked> 用有數量 <br>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    <span>1.</span>
+                                    <img src="" alt="商品圖片">
+                                </td>
+                                <td class="text-start">龍貓等公車xczczxcxz</td>
+                                <td>A獎</td>
+                                <td>宮崎駿001</td>
+                                <td>3</td>
+                                <td>2024/01/03<br>2024/05/10<br>2024/10/15</td>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <button class="btn btn-secondary btn-circle btn-decrease">-</button>
+                                        <input type="text" value="0" class="form-control mx-2 text-center"
+                                            style="width: 50px;" readonly>
+                                        <button class="btn btn-secondary btn-circle btn-increase">+</button>
+                                    </div>
+                                </td>
+                                <td width="100px">
+                                    <button class="btn btn-exchange">兌換G幣</button>
+                                </td>
+                                <td width="100px">
+                                    <button class="btn btn-deli">幫我出貨</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    <span>2.</span>
+                                    <img src="" alt="商品圖片">
+                                </td>
+                                <td class="text-start">龍貓等公車</td>
+                                <td>A獎</td>
+                                <td>宮崎駿001</td>
+                                <td>1</td>
+                                <td>2024/11/12</td>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <button class="btn btn-secondary btn-circle btn-decrease">-</button>
+                                        <input type="text" value="0" class="form-control mx-2 text-center"
+                                            style="width: 50px;" readonly>
+                                        <button class="btn btn-secondary btn-circle btn-increase">+</button>
+                                    </div>
+                                </td>
+                                <td width="100px">
+                                    <button class="btn btn-exchange">兌換G幣</button>
+                                </td>
+                                <td width="100px">
+                                    <button class="btn btn-deli">幫我出貨</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    <span>3.</span>
+                                    <img src="" alt="商品圖片">
+                                </td>
+                                <td class="text-start">龍貓等公車</td>
+                                <td>A獎</td>
+                                <td>宮崎駿001</td>
+                                <td>5</td>
+                                <td>2024/11/15<br>2024/11/15<br>2024/11/15<br>2024/11/22<br>2024/12/05</td>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <button class="btn btn-secondary btn-circle btn-decrease">-</button>
+                                        <input type="text" value="0" class="form-control mx-2 text-center"
+                                            style="width: 50px;" readonly>
+                                        <button class="btn btn-secondary btn-circle btn-increase">+</button>
+                                    </div>
+                                </td>
+                                <td width="100px">
+                                    <button class="btn btn-exchange">兌換G幣</button>
+                                </td>
+                                <td width="100px">
+                                    <button class="btn btn-deli">幫我出貨</button>
+                                </td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </table>
+                    </div>
+                    <p class="note mt-4">
+                        商品取貨規則：
+                    <ul>
+                        <li>單筆寄送僅接受一次選擇。</li>
+                        <li>以超商寄取，單筆記錄依 7-11 寄付規定。</li>
+                        <li>若商品在聯絡時間3個月後仍未處理，則會「自動兌換成對應G幣」。</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+            <!-- 4. 我的錢包 -->
+            <div id="memberWallet" class="tab-pane">
+                <p class="h1 d-inline-block me-3">G幣交易紀錄</p>
+                <form class="d-inline-block">
+                    <input class="date-input orderStartText" type="text" placeholder="起始日" readonly>
+                    <span class="datepicker-toggle">
+                        <span class="datepicker-toggle-button"></span>
+                        <input type="date" class="datepicker-input orderStartDate">
+                    </span>
+                    <span> ~ </span>
+                    <input class="date-input orderEndText" type="text" placeholder="結束日" readonly>
+                    <span class="datepicker-toggle">
+                        <span class="datepicker-toggle-button"></span>
+                        <input type="date" class="datepicker-input orderEndDate">
+                    </span>
+                    <button class="rounded-1">查詢</button>
+                </form>
+                <hr>
+                <div>
+                    <table class="w-100 text-center">
+                        <tr class="text-center border-0">
+                            <th class="text-start">交易日期</th>
+                            <th>物品</th>
+                            <th class="position-relative">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    類型 &ensp;
+                                    <button class="itemFilterBtn">⋯</button>
+                                </div>
+                                <div class="position-absolute itemFilter"
+                                    style="visibility: hidden; padding: 5px;text-align: left;border: 1px solid var(--main-darkblue); border-radius: 5px; background-color: var(--main-darkblue); color: white; right:-50px; bottom: -110px;">
+                                    <form action="">
+                                        <input type="checkbox" checked> 扭蛋 <br>
+                                        <input type="checkbox" checked> 一番賞 <br>
+                                        <input type="checkbox" checked> 訂單 <br>
+                                        <input type="checkbox" checked> 生日禮 <br>
+                                    </form>
+                                </div>
+                            </th>
+                            <th>數量</th>
+                            <th>總計</th>
+                            <th class="position-relative">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    付款方式 &ensp;
+                                    <button class="itemFilterBtn">⋯</button>
+                                </div>
+                                <div class="position-absolute itemFilter"
+                                    style="visibility: hidden; padding: 5px;text-align: left;border: 1px solid var(--main-darkblue); border-radius: 5px; background-color: var(--main-darkblue); color: white; right:-50px; bottom: -110px;">
+                                    <form action="">
+                                        <input type="checkbox" checked> G 幣 <br>
+                                        <input type="checkbox" checked> 信用卡 <br>
+                                        <input type="checkbox" checked> 轉帳 <br>
+                                        <input type="checkbox" checked> 超商付款 <br>
+                                    </form>
+                                </div>
+                            </th>
+                            <th>G 幣變更</th>
+                            <th class="position-relative">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    G 幣餘額
+                                    <button class="position-absolute classFilterBtn"
+                                        style="border-radius: 5px; right: -15px;">+</button>
+                                </div>
+                                <div class="position-absolute classFilter"
+                                    style="visibility: hidden; padding: 5px;text-align: left;border: 1px solid var(--main-darkblue); border-radius: 5px; background-color: var(--main-darkblue); color: white; right:-130px; bottom: -190px;">
+                                    <form action="">
+                                        <input type="checkbox" checked> 交易日期 <br>
+                                        <input type="checkbox" checked> 物品 <br>
+                                        <input type="checkbox" checked> 類型 <br>
+                                        <input type="checkbox" checked> 數量 <br>
+                                        <input type="checkbox" checked> 總計 <br>
+                                        <input type="checkbox" checked> 付款方式 <br>
+                                        <input type="checkbox" checked> G幣變更 <br>
+                                        <input type="checkbox" checked> G幣餘額 <br>
+                                    </form>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="text-start">2024/11/20</td>
+                            <td>XXX扭蛋</td>
+                            <td>扭蛋</td>
+                            <td>10</td>
+                            <td>G 1,200</td>
+                            <td>G 幣</td>
+                            <td>-G 1200</td>
+                            <td>G 1,650</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">2024/11/20</td>
+                            <td>XXX扭蛋</td>
+                            <td>扭蛋</td>
+                            <td>10</td>
+                            <td>G 1,200</td>
+                            <td>G 幣</td>
+                            <td>-G 1200</td>
+                            <td>G 1,650</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">2024/11/20</td>
+                            <td>XXX扭蛋</td>
+                            <td>扭蛋</td>
+                            <td>10</td>
+                            <td>G 1,200</td>
+                            <td>G 幣</td>
+                            <td>-G 1200</td>
+                            <td>G 1,650</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- 5. 我的訂單 -->
+            <div id="memberOrder" class="tab-pane">
+                <p class="h1 d-inline-block me-3">我的訂單</p>
+                <form class="d-inline-block">
+                    <input class="date-input orderStartText" type="text" placeholder="起始日" readonly>
+                    <span class="datepicker-toggle">
+                        <span class="datepicker-toggle-button"></span>
+                        <input type="date" class="datepicker-input orderStartDate">
+                    </span>
+                    <span> ~ </span>
+                    <input class="date-input orderEndText" type="text" placeholder="結束日" readonly>
+                    <span class="datepicker-toggle">
+                        <span class="datepicker-toggle-button"></span>
+                        <input type="date" class="datepicker-input orderEndDate">
+                    </span>
+                    <button class="rounded-1">查詢</button>
+                </form>
+                <hr>
+                <div>
+                    <form class="mb-3">
+                        <label for="orderNumber">訂單查詢</label>
+                        <input id="orderNumber" type="text" class="rounded-1" placeholder="請輸入訂單編號">&ensp;<input
+                            type="submit" class="rounded-1">
+                    </form>
+                    <table class="w-100 text-center">
+                        <tr class="border-0">
+                            <th class="text-start">訂單編號</th>
+                            <th>訂單時間</th>
+                            <th>處理狀態</th>
+                            <th>物流</th>
+                            <th>訂單詳情</th>
+                        </tr>
+                        <tr>
+                            <td class="text-start">2024112200348</td>
+                            <td>2024/11/22</td>
+                            <td>待出貨</td>
+                            <td>宅配</td>
+                            <td><a href="">明細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">2024101000331</td>
+                            <td>2024/10/10</td>
+                            <td>已出貨</td>
+                            <td>7-11</td>
+                            <td><a href="">明細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">2024071800241</td>
+                            <td>2024/07/18</td>
+                            <td>已取貨</td>
+                            <td>宅配</td>
+                            <td><a href="">明細</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- 6. 基本資料 -->
+            <div id="memberProfile" class="tab-pane profile-container">
+                <!-- 頭像 -->
+                <div>
+                    <div class="text-center">
+                        <img src="./img/gachoButton.png" alt="頭像"
+                            class="rounded-circle d-inline-block object-fit-contain" width="200px" height="200px">
+                        <button class="btn-icon m-auto d-block">更換頭像</button>
+                    </div>
+                </div>
+                <!-- 表單資料 -->
+                <div class="mt-5" id="profile">
+                    <form>
+                        <!-- 姓名 -->
+                        <div class="mb-3">
+                            <label class="form-label">姓名*</label>
+                            <input type="text" class="form-control-plaintext rounded-pill px-3" value="陳寶寶" readonly>
+                        </div>
+
+                        <!-- 電子郵件 -->
+                        <div class="mb-3">
+                            <label class="form-label">電子郵件*</label>
+                            <input type="mail" class="form-control-plaintext rounded-pill px-3"
+                                value="baobaoChen@gmail.com" readonly>
+                        </div>
+
+                        <!-- 電話號碼 -->
+                        <div class="mb-3">
+                            <label class="form-label">電話號碼</label>
+                            <input type="text" class="form-control-plaintext rounded-pill px-3" value="-" readonly>
+                        </div>
+
+                        <!-- 生日 -->
+                        <div class="mb-3">
+                            <label class="form-label">生日</label>
+                            <input type="text" class="form-control-plaintext rounded-pill px-3" value="-" readonly>
+                            <span class="small-info">ℹ️ 設定後無法修改</span>
+                        </div>
+
+                        <!-- 地址 -->
+                        <div class="mb-3">
+                            <label class="form-label">地址</label>
+                            <input type="text" class="form-control-plaintext rounded-pill px-3" value="-" readonly>
+                        </div>
+
+                        <!-- 付款方式 -->
+                        <div class="mb-3">
+                            <label class="form-label">付款方式</label>
+                            <input type="text" class="form-control-plaintext rounded-pill px-3" value="-" readonly>
+                        </div>
+
+                        <!-- 推薦碼 -->
+                        <div class="mb-3">
+                            <label class="form-label">我的推薦碼</label>
+                            <input type="text" class="form-control-plaintext rounded-pill px-3" value="550481" readonly>
+                        </div>
+
+                        <!-- 修改按鈕 -->
+                        <div class="edit-button text-end mt-4">
+                            <button type="button" class="btn rounded-pill" id="editProfile">修改基本資料</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- 修改表單資料 -->
+                <div class="mt-5 d-none" id="profileEdit">
+                    <form>
+                        <!-- 姓名 -->
+                        <div class="mb-3">
+                            <label class="form-label">姓名*</label>
+                            <input type="text" class="form-control-plaintext rounded-pill px-3 editFocus" value="陳寶寶">
+                        </div>
+
+                        <!-- 電子郵件 -->
+                        <div class="mb-3">
+                            <label class="form-label">電子郵件*</label>
+                            <input type="mail" class="form-control-plaintext rounded-pill px-3"
+                                value="baobaoChen@gmail.com" readonly>
+                        </div>
+
+                        <!-- 電話號碼 -->
+                        <div class="mb-3">
+                            <label class="form-label">電話號碼</label>
+                            <input type="text" class="form-control-plaintext rounded-pill px-3 editFocus" value="">
+                        </div>
+
+                        <!-- 生日 -->
+                        <div class="mb-3">
+                            <label class="form-label">生日</label>
+                            <input type="text" class="form-control-plaintext rounded-pill px-3 editFocus" value="">
+                            <span class="small-info">ℹ️ 設定後無法修改</span>
+                        </div>
+
+                        <!-- 地址 -->
+                        <div class="mb-3">
+                            <label class="form-label">地址</label>
+                            <input type="text" class="form-control-plaintext rounded-pill px-3 editFocus" value="">
+                        </div>
+
+                        <!-- 付款方式 -->
+                        <div class="mb-3">
+                            <label class="form-label">付款方式</label>
+                            <input type="text" class="form-control-plaintext rounded-pill px-3 editFocus" value="" readonly>
+                            <div class="edit-button text-end mt-2">
+                                <button type="button" class="btn rounded-pill btn-sm">刪除</button>
+                                <button type="button" class="btn rounded-pill btn-sm">新增</button>
+                            </div>
+                        </div>
+
+                        <!-- 推薦碼 -->
+                        <div class="mb-3">
+                            <label class="form-label">我的推薦碼</label>
+                            <input type="text" class="form-control-plaintext rounded-pill px-3" value="550481" readonly>
+                        </div>
+
+                        <!-- 修改按鈕 -->
+                        <div class="edit-button text-end mt-4">
+                            <button type="button" class="btn rounded-pill" id="confirmEdit">確認修改</button>
+                        </div>
+                    </form>
+                    <hr>
+                    <!-- 修改密碼 -->
+                    <div class="edit-button text-end mt-4">
+                        <button id="editPwdBtn" type="button" class="btn rounded-pill">修改密碼</button>
+                    </div>
+                    <form id="pwdSection" style="display: none;">
+                        <div class="mb-3">
+                            <label class="form-label">舊密碼*</label>
+                            <input type="password" class="form-control-plaintext rounded-pill px-3 editFocus" value="">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">新密碼*</label>
+                            <input type="password" class="form-control-plaintext rounded-pill px-3 editFocus" value="">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">確認密碼*</label>
+                            <input type="password" class="form-control-plaintext rounded-pill px-3 editFocus" value="">
+                        </div>
+                        <!-- 修改密碼按鈕 -->
+                        <div class="edit-button text-end mt-4">
+                            <button id="confirmPwdBtn" type="button" class="btn rounded-pill">確認修改密碼</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        $("#editProfile").click(() => {
+            $("#profile").addClass("d-none")
+            $("#profileEdit").removeClass("d-none")
+        })
+        $("#confirmEdit").click(() => {
+            $("#profileEdit").addClass("d-none")
+            $("#profile").removeClass("d-none")
+        })
+        $(document).ready(function () {
+            // 增加按鈕點擊事件
+            $('.btn-increase').on('click', function () {
+                let input = $(this).siblings('input');
+                let currentValue = parseInt(input.val());
+                if (currentValue < $(this).parent().parent().parent().children().eq(4).text()) {
+                    input.val(currentValue + 1);
+                }
+            });
+
+            // 減少按鈕點擊事件
+            $('.btn-decrease').on('click', function () {
+                let input = $(this).siblings('input');
+                let currentValue = parseInt(input.val());
+                if (currentValue > 0) {
+                    input.val(currentValue - 1);
+                }
+            });
+
+            // 出貨按鈕狀態切換
+            $('.checkbox-style').on('click', function () {
+                $(this).toggleClass('active');
+                $(this).find('input[type="checkbox"]').prop('checked', $(this).hasClass('active'));
+            });
+        });
+
+        $(document).on('click', function (event) {
+            const classFilterList = [$('#memberStore .classFilter'), $('#memberWallet .classFilter'), $($('#memberWallet .itemFilter')[0]), $($('#memberWallet .itemFilter')[1])]
+            // 檢查點擊是否發生在目標元素外部
+            classFilterList.forEach(element => {
+                if (!element.is(event.target) && element.has(event.target).length === 0) {
+                    element.css('visibility', 'hidden');
+                }
+            })
+        });
+
+        const filerBtnList = [[$("#memberStore .classFilterBtn"), $("#memberStore .classFilter")],
+        [$("#memberWallet .classFilterBtn"), $("#memberWallet .classFilter")],
+        [$($('#memberWallet .itemFilterBtn')[0]), $($('#memberWallet .itemFilter')[0])],
+        [$($('#memberWallet .itemFilterBtn')[1]), $($('#memberWallet .itemFilter')[1])]]
+        filerBtnList.forEach(element => {
+            element[0].click(() => {
+                event.stopPropagation();
+                element[1].css("visibility", "visible")
+            })
+        });
+
+
+        const dateInput = document.getElementById('dateInput');
+
+        // 取得今天的日期，並格式化為 YYYY-MM-DD
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0];
+
+        // #memberWallet 
+        $("#memberWallet .orderStartDate").prop("max", formattedDate)
+        $("#memberWallet .orderEndDate").prop("max", formattedDate)
+
+        $("#memberWallet .orderStartDate").on("input", () => {
+            $("#memberWallet .orderStartText").val($("#memberWallet .orderStartDate").val())
+            $("#memberWallet .orderEndDate").prop("min", $("#memberWallet .orderStartDate").val())
+        })
+        $("#memberWallet .orderEndDate").on("input", () => {
+            $("#memberWallet .orderEndText").val($("#memberWallet .orderEndDate").val())
+            $("#memberWallet .orderStartDate").prop("max", $("#memberWallet .orderEndDate").val())
+        })
+
+        // #memberOrder
+        $("#memberOrder .orderStartDate").prop("max", formattedDate)
+        $("#memberOrder .orderEndDate").prop("max", formattedDate)
+
+        $("#memberOrder .orderStartDate").on("input", () => {
+            $("#memberOrder .orderStartText").val($("#memberOrder .orderStartDate").val())
+            $("#memberOrder .orderEndDate").prop("min", $("#memberOrder .orderStartDate").val())
+        })
+        $("#memberOrder .orderEndDate").on("input", () => {
+            $("#memberOrder .orderEndText").val($("#memberOrder .orderEndDate").val())
+            $("#memberOrder .orderStartDate").prop("max", $("#memberOrder .orderEndDate").val())
+        })
+
+        $("#editPwdBtn").click(()=>{
+            $("#pwdSection").css("display", "block")
+            $("#editPwdBtn").css("display", "none")
+        })
+        $("#confirmPwdBtn").click(()=>{
+            $("#pwdSection").css("display", "none")
+            $("#editPwdBtn").css("display", "inline")
+        })
+    </script>
+    <!-- Navbar component -->
+    <script type="text/babel" src="./components/Navbar.jsx"></script>
+    <script type="text/babel">
+        let myReactRoot = ReactDOM.createRoot(document.getElementById('nav'));
+        // 這邊其中一個要用的就好
+        // 扭蛋navbar
+        myReactRoot.render(
+            <Navbar logo='./img/logo2.png' bgcolor="var(--main-bg-gray)" navbgcolor="var(--main-darkblue)" svgColor="var(--white-filter)" textColor="white" />
+        )
+        // 一番賞navbar
+        // <Navbar logo='./img/logo.png' bgcolor="var(--main-darkblue)" navbgcolor="var(--main-bg-gray)" svgColor="var(--main-darkblue-filter)" textColor="var(--main-darkblue)" />
+    </script>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+</body>
